@@ -90,7 +90,7 @@
 <script>
 // import tomarkdown from './lib/core/to-markdown.js'
 import {autoTextarea} from 'auto-textarea'
-import {keydownListen} from './lib/core/keydown-listen.js' 
+import {keydownListen} from './lib/core/keydown-listen.js'
 import hljsCss from './lib/core/hljs/lang.hljs.css.js'
 import hljsLangs from './lib/core/hljs/lang.hljs.js'
 const xss = require('xss');
@@ -456,7 +456,7 @@ export default {
                 if (isinsert === true) {
                     // 去除特殊字符
                     $file._name = $file.name.replace(/[\[\]\(\)\+\{\}&\|\\\*^%$#@\-]/g, '');
-                    
+
                     $vm.insertText($vm.getTextareaDom(),
                         {
                             prefix: '![' + $file._name + '](' + pos + ')',
@@ -549,6 +549,9 @@ export default {
         save(val, render) {
             this.$emit('save', val, render)
         },
+        edit() {
+          this.$emit('edit')
+        },
         // 导航栏切换
         navigationtoggle(status, val) {
             this.$emit('navigationToggle', status, val)
@@ -574,7 +577,7 @@ export default {
         // 工具栏插入内容
         insertText(obj, {prefix, subfix, str, type}) {
             // if (this.s_preview_switch) {
-          
+
             insertTextAtCaret(obj, {prefix, subfix, str, type}, this);
         },
         insertTab() {
@@ -682,7 +685,7 @@ export default {
             if (this.xssOptions) {
                 val = xss(val, this.xssOptions);
             }
-            
+
             if (val !== this.d_value) {
                 this.d_value = val
             }
