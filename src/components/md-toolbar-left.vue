@@ -110,9 +110,6 @@
         <button type="button" v-if="toolbars.save" @click="$clicks('save')" class="op-icon fa fa-mavon-floppy-o"
                 aria-hidden="true"
                 :title="`${d_words.tl_save} (ctrl+s)`"></button>
-        <button type="button" v-if="toolbars.edit" @click="$clicks('edit')" class="op-icon fa fa-mavon-floppy-o"
-                aria-hidden="true"
-                title="编辑"></button>
         <slot name="left-toolbar-after" />
 
         <!-- 添加image链接 -->

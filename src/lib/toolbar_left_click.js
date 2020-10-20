@@ -43,9 +43,6 @@ function $toolbar_left_trash_click($vm) {
 function $toolbar_left_save_click($vm) {
     $vm.save($vm.d_value, $vm.d_render)
 }
-function $toolbar_left_edit_click($vm) {
-    $vm.edit()
-}
 // ol
 function $toolbar_left_ol_click($vm) {
     $vm.insertOl()
@@ -189,7 +186,6 @@ export const toolbar_left_click = (_type, $vm) => {
          'redo': $toolbar_left_redo_click,
          'trash': $toolbar_left_trash_click,
          'save': $toolbar_left_save_click,
-         'edit': $toolbar_left_edit_click,
          'ol': $toolbar_left_ol_click,
          'ul': $toolbar_left_ul_click,
          'removeLine': $toolbar_left_remove_line_click

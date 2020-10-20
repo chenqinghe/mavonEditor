@@ -1,6 +1,12 @@
 <template>
       <div class="v-right-item">
         <slot name="right-toolbar-before" />
+        <button type="button" v-if="toolbars.edit" @click="$clicks('edit')" v-show="!s_navigation"
+                class="op-icon fa fa-mavon-bars"
+                aria-hidden="true" title="编辑"></button>
+        <span
+            v-if=" toolbars.help && toolbars.htmlcode && toolbars.readmodel && toolbars.fullscreen && toolbars.subfield && toolbars.navigation"
+            class="op-icon-divider"></span>
         <button type="button" v-if="toolbars.navigation" @click="$clicks('navigation')" v-show="!s_navigation"
                 class="op-icon fa fa-mavon-bars"
                 aria-hidden="true" :title="`${d_words.tl_navigation_on} (F8)`"></button>

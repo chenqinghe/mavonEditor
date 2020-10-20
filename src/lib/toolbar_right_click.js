@@ -44,7 +44,9 @@ function $toolbar_right_preview_click($vm) {
         $vm.previewtoggle($vm.s_preview_switch, $vm.d_value)
     }
 }
-
+function $toolbar_right_edit_click($vm) {
+    $vm.edit()
+}
 function $toolbar_right_fullscreen_click($vm) {
     $vm.s_fullScreen = !$vm.s_fullScreen
     if ($vm.fullscreen) {
@@ -84,7 +86,8 @@ export const toolbar_right_click = (_type, $vm) => {
         'preview': $toolbar_right_preview_click,
         'fullscreen': $toolbar_right_fullscreen_click,
         'navigation': $toolbar_right_navigation_click,
-        'subfield': $toolbar_right_subfield_click
+        'subfield': $toolbar_right_subfield_click,
+        'edit': $toolbar_right_edit_click,
     }
     if (_other_right_click.hasOwnProperty(_type)) {
         _other_right_click[_type]($vm);
